@@ -173,7 +173,8 @@ def db_connection():
             
 ```
 
-## 3. Inside of `app.py`
+## 3. Build some more routes to add full `CRUD` operations
+## Inside of `app.py`
 
 ### Update imports
 Add these imports: `jsonify` and `db_connection`
@@ -222,9 +223,6 @@ flask run
 ```http
 lacalhost:5000/customers
 ```
-
-# Build some more routes to finish out our `CRUD` operations
----
 
 ## Add Request and Error to imports
 
