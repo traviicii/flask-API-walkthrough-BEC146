@@ -236,7 +236,7 @@ from db_connection import db_connection, Error
 
 
 ## Create a route to `create` new customers
-Inside of `app.py`
+### Inside of `app.py`
 ```python
 @app.route('/customers', methods = ['POST'])
 def add_customer():
