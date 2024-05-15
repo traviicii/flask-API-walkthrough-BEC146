@@ -291,6 +291,13 @@ def update_customer(id):
         try:
             cursor = conn.cursor()
 
+            # Checking if the User actually exeists first
+            check_query = "SELECT * FROM Customer WHERE id = %s"
+            cursor.execute(check_query, (id,))
+            customer = cursor.fetchone()
+            if not customer:
+                return jsonify({"Error": "Customer not found"}), 404
+
             # Unpacking the updated customer info
             updated_customer = (customer_data['customer_name'], customer_data['email'], customer_data['phone'], id)
 
@@ -324,6 +331,7 @@ def delete_customer(id):
         try:
             cursor = conn.cursor()
             
+            # Checking if the User actually exeists first
             check_query = "SELECT * FROM Customer WHERE id = %s"
             cursor.execute(check_query, (id,))
             customer = cursor.fetchone()
